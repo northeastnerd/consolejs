@@ -1,5 +1,5 @@
 # consolejs
-Web widget to model retro computer console (print and input interface). This is a zero dependency, client side only browser console in pure javascript. It uses an HTML5 canvas and keystroke processing to implement an editable text IO space (like a VT100 terminal). 
+Zero dependency web widget to model retro computer console (print and input interface). This is a zero dependency, client side only browser console in pure javascript. It uses an HTML5 canvas and keystroke processing to implement an editable text IO space (like a VT100 terminal). 
 
 # why?
 I did it because it was fun, it works for me, your mileage may vary. It supports gotoxy(), cls() and kbhit() because...retro computer, but really print() and input() get the most use. I use it mostly for web app user log messaging and user selections / keyboard control.
