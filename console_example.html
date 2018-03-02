@@ -1,0 +1,68 @@
+<html>
+  <head>
+  <script>
+    /*
+    License information: MIT License
+    
+    Copyright (c) Chris Schalick 2016 All Rights Reserved.
+    
+    Permission is hereby granted, free of charge, to any person obtaining a copy	 
+    of this software and associated documentation files (the "Software"), to deal
+    in the Software without restriction, including without limitation the rights
+    to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+    copies of the Software, and to permit persons to whom the Software is furnished
+    to do so, subject to the following conditions:
+    
+      The above copyright notice and this permission notice shall be included in all
+      copies or substantial portions of the Software.
+    
+    THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED,
+    INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A
+    PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT
+    HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION
+    OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE
+    SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+    */
+  </script>
+  <script src="scripts/console.js"></script>
+  <!-- script src="https://rawgit.com/northeastnerd/jsconsole/master/jsconsole.js"></script -->
+  </head>
+  <body>
+    <center>
+    This is a client side / browser only, zero dependency example of jsconsole.<br><br>
+    Click on the console and type away. There's a simple<br>
+    command processor that takes your input and does the right thing.<br><br>
+    Have fun and as always, Have a Nice Day!
+    <div id="console_div"></div>
+    </center>
+    <script>
+
+      function el(e){return document.getElementById(e);};
+
+      var example = new jsconsole("console_div", 50, 10, "console_id");
+
+      var cmd_inc = 0;
+
+      cmd_proc = function(cmd){
+        var response = ["close, try again...\n",
+                        "getting warmer, try again...\n",
+                        "I'm sorry Dave, I'm afraid I can't do that.\n"];
+        example.print(response[cmd_inc % 3]);
+        cmd_inc++;
+        edit();
+      }
+
+      edit = function(){
+        "use strict";
+        var prompt = ["3 guesses: ", "2 guesses: ", "1 guess: "];
+        example.print(prompt[cmd_inc % 3]);
+        example.input(cmd_proc);
+      }
+
+      window.onload = function(){
+        edit();
+      }
+
+    </script>
+  </body>
+</html>
