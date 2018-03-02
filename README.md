@@ -8,7 +8,8 @@ I did it because it was fun, it works for me, your mileage may vary. It supports
 Speaking of use, usage is pretty simple:
 
   1) Create a new consolejs object in a parent DOM element with desired dimensions, font and colors.
-     The defaults are "scary green 16px monospace on black background"
+     The un-minified object is "consolejs", the minified object is, "con". The default colors are 
+     "scary green 16px monospace on black background".
   2) Call print or input (advanced users may want gotoxy, cls, kbhit)
   3) rinse and repeat, that's it
   
