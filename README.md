@@ -3,7 +3,7 @@ Web widget to model retro computer console (print and input interface). This is 
 
 Speaking of use, usage is pretty simple:
 
-  1) create a new consolejs object in a parent DOM element with desired dimensions and colors, defaults to "scary green on black background"
+  1) create a new consolejs object in a parent DOM element with desired dimensions, font and colors, defaults to "scary green on black background"
   2) call print or input (and advanced users gotoxy, cls, kbhit)
   3) rinse and repeat, that's it
   
