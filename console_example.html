@@ -24,11 +24,12 @@
     SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
     */
   </script>
-  <script src="https://rawgit.com/northeastnerd/consolejs/master/consolejs.js"></script>
+  <script src="scripts/consolejs.js"></script>
+  <!-- script src="https://rawgit.com/northeastnerd/consolejs/master/consolejs.js"></script -->
   </head>
   <body>
     <center>
-    This is a client side / browser only, zero dependency example of jsconsole.<br><br>
+    This is a client side / browser only, zero dependency example of consolejs.<br><br>
     Click on the console and type away. There's a simple<br>
     command processor that takes your input and does the right thing.<br><br>
     Have fun and as always, Have a Nice Day!
@@ -38,7 +39,7 @@
 
       function el(e){return document.getElementById(e);};
 
-      var example = new jsconsole("console_div", 50, 10, "console_id");
+      var example = new consolejs("console_div", 50, 10, "console_id");
 
       var cmd_inc = 0;
 
