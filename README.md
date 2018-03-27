@@ -26,3 +26,6 @@ Verified on:
 * Edge 41.16299.248.0
 * Chrome 64.0.3282.186
 * Firefox 58.0.2
+
+# Quirks + Issues
+One thing I notice with this is if you print a ton of text expecting it to fly by on the console it bogs down the browser rendering engine re-painting the canvas and appears to be doing nothing. When it catches up you see what you expect (the end of the prints) but it can take a really long time if you print a lot. It's definitely better used in interactive applications.
