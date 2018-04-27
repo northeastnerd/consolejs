@@ -22,6 +22,10 @@ There is a live demo of the example in HTML here:
 
 https://rawgit.com/northeastnerd/consolejs/master/console_example.html
 
+And a more elaborate use here showing a browser based retro computer basic IDE here:
+
+https://www.webthinglabs.com/basic_console.html
+
 # Testing
 Verified on:
 * Edge 41.16299.248.0
