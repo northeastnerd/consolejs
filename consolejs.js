@@ -115,7 +115,7 @@ consolejs.prototype.tab = function(n)
 consolejs.prototype.putchar = function(c)
 {
   "use strict";
-  var r, c;
+  var r;
 
   this.chcnt++;
   this.cursor(0);
@@ -152,18 +152,24 @@ consolejs.prototype.putchar = function(c)
 consolejs.prototype.check_scroll = function()
 {
   "use strict";
-  var r, c, num_lines = this.lines;
+  var pg, l, c, num_lines = this.lines;
   if(this.cur_y >= num_lines)
   {
-    for(r = 0; r < (num_lines - 1); r++)
-      this.chbfr[r] = this.chbfr[r + 1];
+    pg = [];    
+    for(l = 0; l < (num_lines - 1); l++){
+      this.chbfr[l] = [];
+      pg[l] = this.chbfr[l + 1];
+      for(c = 0; c < this.linewidth; c++){
+        if((pg[l][c] == '\r') || (pg[l][c] == '\n')){
+          pg[l] = pg[l].slice(0, c + 1);
+          c = this.linewidth;
+	}
+      }
+    }
     this.chbfr[num_lines - 1] = [];
     this.cls();
-    for(r = 0; r < (num_lines - 1); r++)
-    {
-      for(c = 0; c < this.chbfr[r].length; c++)
-        this.putchar(this.chbfr[r][c]);
-    }
+    for(l = 0; l < (num_lines - 1); l++)
+      this.print(pg[l]);
   }
 }
 
